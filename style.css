@@ -1,0 +1,28 @@
+body {
+    border: 2px solid black;
+    background-color: white;
+}
+h1 {
+    text-align: center;
+}
+th {
+    color: black;
+}
+table, td {
+    color: #110000;
+    font-family: courier;
+    text-align: left;
+    font-size: 40px;
+}
+.glow {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+      color: #a400ff;
+  }
+  to {
+      color: #ff4900;
+  }
+}
