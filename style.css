@@ -1,28 +1,13 @@
-body {
-    border: 2px solid black;
-    background-color: white;
-}
-h1 {
-    text-align: center;
-}
-th {
-    color: black;
-}
-table, td {
-    color: #110000;
-    font-family: courier;
-    text-align: left;
-    font-size: 40px;
-}
-.glow {
-  animation: glow 1s ease-in-out infinite alternate;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
 }
 
-@-webkit-keyframes glow {
-  from {
-      color: #a400ff;
-  }
-  to {
-      color: #ff4900;
-  }
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
 }
