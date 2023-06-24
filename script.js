@@ -91,60 +91,56 @@ function load_game_list() {
     }
 
     // load list
-    
-        showStatus("Hosted on ::1, using outdated JSON")
-        console.log('games.json not found or is hosted locally, publish to server and it should work; using backup json..');
 
-        var data = JSON.parse(outdated_backupJSON);
+    var data = JSON.parse(outdated_backupJSON);
 
-        function sortByGame(arr) {
-            arr.sort(function (a, b) {
-                var nameA = a.game.toLowerCase(), nameB = b.game.toLowerCase()
-                if (nameA < nameB)
-                    return -1
-                if (nameA > nameB)
-                    return 1
-                return 0
-            });
-            return arr;
-        }
-
-        const wumbeeGames = sortByGame(data.wumbee);
-        wumbeeGames.forEach(game => {
-            create_card(game.game, game.logo, game.status, game.note)
-            console.log("Game:", game.game);
-            console.log("Status:", game.status);
-            console.log("Note:", game.note);
-            console.log("Logo:", game.logo);
-            console.log("Tester:", game.tester);
+    function sortByGame(arr) {
+        arr.sort(function (a, b) {
+            var nameA = a.game.toLowerCase(), nameB = b.game.toLowerCase()
+            if (nameA < nameB)
+                return -1
+            if (nameA > nameB)
+                return 1
+            return 0
         });
+        return arr;
+    }
 
-        const unofficialGames = sortByGame(data.unofficial);
-        unofficialGames.forEach(game => {
-            create_card(game.game, game.logo, game.status, game.note)
-            console.log("Game:", game.game);
-            console.log("Status:", game.status);
-            console.log("Note:", game.note);
-            console.log("Logo:", game.logo);
-            console.log("Tester:", game.tester);
-        });
+    const wumbeeGames = sortByGame(data.wumbee);
+    wumbeeGames.forEach(game => {
+        create_card(game.game, game.logo, game.status, game.note)
+        console.log("Game:", game.game);
+        console.log("Status:", game.status);
+        console.log("Note:", game.note);
+        console.log("Logo:", game.logo);
+        console.log("Tester:", game.tester);
+    });
 
-        const homebrewGames = sortByGame(data.homebrew);
-        homebrewGames.forEach(game => {
-            create_card(game.game, game.logo, game.status, game.note)
-            console.log("Game:", game.game);
-            console.log("Status:", game.status);
-            console.log("Note:", game.note);
-            console.log("Logo:", game.logo);
-            console.log("Tester:", game.tester);
-        });
+    const unofficialGames = sortByGame(data.unofficial);
+    unofficialGames.forEach(game => {
+        create_card(game.game, game.logo, game.status, game.note)
+        console.log("Game:", game.game);
+        console.log("Status:", game.status);
+        console.log("Note:", game.note);
+        console.log("Logo:", game.logo);
+        console.log("Tester:", game.tester);
+    });
+
+    const homebrewGames = sortByGame(data.homebrew);
+    homebrewGames.forEach(game => {
+        create_card(game.game, game.logo, game.status, game.note)
+        console.log("Game:", game.game);
+        console.log("Status:", game.status);
+        console.log("Note:", game.note);
+        console.log("Logo:", game.logo);
+        console.log("Tester:", game.tester);
+    });
 
     const hideElements = document.querySelectorAll(".hideTillLoaded");
     hideElements.forEach((element) => {
         element.style.display = "none";
     });
 }
-load_game_list()
 
 function search() {
     var input = document.getElementById("myInput");
@@ -186,6 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dim == "dark") { // dark toggled
         darkMode("ncheck", "true")
     }
+
+    // load games
+    load_game_list()
 });
 
 function dCheck() {
