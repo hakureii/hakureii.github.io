@@ -91,49 +91,7 @@ function load_game_list() {
     }
 
     // load list
-    var xhr = new XMLHttpRequest();
-    var file = 'games.json';
-    xhr.open('GET', file, true);
-    xhr.responseType = 'json';
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            var jsonData = xhr.response;
-
-            jsonData.wumbee.sort(function (a, b) {
-                var nameA = a.game.toLowerCase(), nameB = b.game.toLowerCase()
-                if (nameA < nameB) //sort string ascending
-                    return -1
-                if (nameA > nameB)
-                    return 1
-                return 0 //default return value (no sorting)
-            });
-
-            jsonData.unofficial.sort(function (a, b) {
-                var nameA = a.game.toLowerCase(), nameB = b.game.toLowerCase()
-                if (nameA < nameB) //sort string ascending
-                    return -1
-                if (nameA > nameB)
-                    return 1
-                return 0 //default return value (no sorting)
-            });
-
-            jsonData.homebrew.sort(function (a, b) {
-                var nameA = a.game.toLowerCase(), nameB = b.game.toLowerCase()
-                if (nameA < nameB) //sort string ascending
-                    return -1
-                if (nameA > nameB)
-                    return 1
-                return 0 //default return value (no sorting)
-            });
-
-            console.log(jsonData);
-
-        } else {
-            console.error('Error loading the file. Status:', xhr.status);
-        }
-    };
-
-    xhr.onerror = function () {
+    
         showStatus("Hosted on ::1, using outdated JSON")
         console.log('games.json not found or is hosted locally, publish to server and it should work; using backup json..');
 
@@ -180,9 +138,6 @@ function load_game_list() {
             console.log("Logo:", game.logo);
             console.log("Tester:", game.tester);
         });
-    };
-
-    xhr.send();
 
     const hideElements = document.querySelectorAll(".hideTillLoaded");
     hideElements.forEach((element) => {
