@@ -1,10 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!--Code is licensed by tanos, ui design must be credits by tanos or tanos his team-->
+<html><!--Only one framework used, jquery for animation.-->
+<div class="hideTillLoaded"></div>
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://tanos.gq/jquery.js"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
-<body style="display: inline;" id="body">
+
+<body ondragstart="return false;">
+
+    <img id="spinImage" style="border-radius: 100%" width="48px"
+        src="https://raw.githubusercontent.com/strato-emu/branding/master/logo/strato-logo.png" />
+
+    <!--<input onkeyup="search()" placeholder="Search..." type="text" id="myInput">-->
+    <!--Code may be corrupt on some browsers, remove brackets and minuses to allow code to run, i have no idea how to implent a search function but i can add invisible text to just scroll to that area.-->
+
+    <h2></h2>
+
+    <h3 id="current-time">Javascript is not applied, code will be broken</h3>
+    <div id="card-container" class="card-container"></div>
+
+    <div style="display: none;" id="support" class="support">
+        <div class="mainbuttoncontainer"><!---->
+            <button onclick="SwitchTo('tst', 'false')" id="tst" class="menu-items selectedl">Test</button>
+
+            <div class="mseperator"></div>
+
+            <button onclick="SwitchTo('sts', 'false')" id="sts" class="menu-items">Settings</button>
+            <button onclick="SwitchTo('frs', 'false')" id="frs" class="menu-items">Friends</button>
+            <button onclick="SwitchTo('crs', 'false')" id="crs" class="menu-items">Credits</button>
+            <!---->
+        </div>
+        <div class="test panels">
+            <img class="pfp" width="15%" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);cursor:auto;"
+                src="https://preview.redd.it/2ezy3v4u2nc61.png?width=960&format=png&auto=webp&v=enabled&s=e3e790daa404bff5741d1ce9836d292da63848dc" />
+        </div>
+
+        <div style="display: none;" class="settings panels">
+            <img class="pfp" width="15%" style="display:none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);cursor:auto;"
+                src="https://i.ytimg.com/vi/F3Ne09o4W-Q/maxresdefault.jpg" />
+
+            <button onclick="darkMode('set', 'false')" class="settogs">Dark mode</button>
+            <h4 style="
+                            position: relative;
+                            top: -3%;
+                            font-family: 'font';
+                            font-size: 2vmin;
+                            opacity:0.65;
+                            left: 7.5vmin;
+                            z-index: 50;
+                            transition: 0.1s ease-out;">You will able to relax your eyes after this.</h4>
+        </div>
+
+        <div style="display: none;" class="friends panels">
+            <h4 style="
+                position: fixed;
+                top: 8%;
+                font-family: 'font';
+                font-size: 2.3vmin;
+                left: 50vmin;
+                z-index: 50;
+                transition: 0.1s ease-out;">you have no friends</h4>
+        </div>
+
+        <div style="display: none;" class="credits panels">
+            <h4 style="
+        position: fixed;
+        top: 8%;
+        font-family: 'font';
+        font-size: 2.3vmin;
+        left: 50vmin;
+        z-index: 50;
+        transition: 0.1s ease-out;">Warm thank you to:<br>Harukeii (JSON, images), wumbee (Founder, owner) and tanos
+                (UI, Javascript, Animation)<br><br>Hot thank you to: Lynxy, Robbussy, Tsk, Jsk, Old man, Mark,
+                EzOnTheEyes, Adrien, KIMICHI, Sovietfowl,<br> ByLaws, TheASV, MC and the rest of the community for
+                supporting and building skyline together.</h4>
+            <img class="pfp" height="150vmax" width="150vmax"
+                style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);cursor:auto;top:60vmin;left:50vmin"
+                src="https://i.kym-cdn.com/entries/icons/original/000/041/742/cover3.jpg" />
+
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="bline"></div>
+        <img style="position:absolute; top:10%; left: 2.5%" width="40px" id="pp"
+            src="Controller/Black/Pro Controller.png" />
+        <div class="bb">
+            <h5 id="zxx">Game note will be displayed here.</h5>
+        </div>
+        <img id="four" onclick="gg();" style="position:absolute; top:30%; right: 5%" width="80px"
+            src="https://cdn.discordapp.com/attachments/937459410081550386/1121136827840077914/image.png" />
+    </div>
+
 </body>
-<script src="/script.js"></script>
+
+<script src="script.js"></script>
+
+<style>
+    .pfp {
+        position: fixed;
+        top: 10%;
+        left: 55vmin;
+        transition: 0.15s ease-out;
+    }
+
+    .pfp:hover {
+        border: 4.5px solid #43d7df80;
+        position: fixed;
+        top: 10%;
+        left: 55vmin;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .mseperator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        position: relative;
+        left: 13%;
+        top: 0px;
+        height: 0.8px;
+        background-color: #8b8b8b;
+    }
+
+    .mainbuttoncontainer {
+        display: flex;
+        flex-direction: column;
+        width: 35vmin;
+    }
+
+    .menu-items {
+        transition: 0.15s ease-out;
+        cursor: pointer;
+        padding-left: 19px;
+        font-size: 1rem;
+        text-align: left;
+        margin-left: 14px;
+        margin-bottom: 8px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .settogs {
+        transition: 0.15s ease-out;
+        cursor: pointer;
+        padding-left: 10px;
+        font-size: 0.95rem;
+        text-align: left;
+        position: relative;
+        right: -5%;
+        margin-bottom: 8px;
+        height: 55px;
+        border: none;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        background-color: transparent;
+        width: 69vmax;
+        display: inline-block;
+    }
+
+    .lineSelected {
+        background-color: #0047ff;
+        width: 4px;
+        height: 40px;
+        position: fixed;
+        top: 17%;
+    }
+
+    .menu-items:hover {
+        border: 4.5px solid #43d7df80;
+    }
+
+    .selectedl {
+        color: #0047ff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        border: 4.5px solid #43d6df;
+        background-color: #fff;
+    }
+
+    .selectedd {
+        color: #0047ff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        border: 4.5px solid #43d6df;
+        background-color: #1f2227;
+    }
+</style>
+
 </html>

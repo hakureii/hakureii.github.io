@@ -1,13 +1,244 @@
+@font-face {
+    font-family: 'font';
+    src: url('NINTENDOSWITCHUI.ttf');
+}
+
+img {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    2% {
+        transform: rotate(-12deg);
+    }
+
+    4% {
+        transform: rotate(-20deg);
+    }
+
+    6% {
+        transform: rotate(-12deg);
+    }
+
+    8% {
+        transform: rotate(-5deg);
+    }
+
+    10% {
+        transform: rotate(5deg);
+    }
+
+    20% {
+        transform: rotate(-2deg);
+    }
+
+    30% {
+        transform: rotate(2deg);
+    }
+
+    40% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    60% {
+        transform: rotate(-1deg);
+    }
+
+    70% {
+        transform: rotate(1deg);
+    }
+
+    80% {
+        transform: rotate(-1deg);
+    }
+
+    90% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+body {
+    background-color: #e7ece8;
+    margin: 0 auto;
+    padding: 20px 20px 20px 30px;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: 'font';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'font';
+}
+
+* {
+    font-family: 'font';
+}
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    width: 155px;
+    height: 155px;
 }
 
 .container {
-  padding: 2px 16px;
+    padding: 10px;
+    padding: 2px 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    right: 7px;
+    bottom: -138px;
+    border-radius: 100%;
+}
+
+.valid {
+    background-color: #03d59e;
+}
+
+.invalid {
+    background-color: #e60012;
+}
+
+.ig {
+    background-color: #bf535c;
+}
+
+.y {
+    background-color: #ddd763;
+}
+
+h3 {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 1rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #e7ece8;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.bline {
+    background-color: #808080;
+    width: 98%;
+    top: -10px;
+    position: relative;
+    height: 1px;
+}
+
+h4 {
+    position: relative;
+    top: -70%;
+    left: 190vmin;
+    font-size: 0.9rem;
+    color: #808080;
+}
+
+h5 {
+    position: relative;
+    top: -21px;
+    opacity: 0;
+    font-size: 0.9rem;
+    color: #2b2b2b;
+}
+
+#myInput {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+    position: absolute;
+    left: 23%;
+    top: 2.5%;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 16px;
+    padding: 10px 20px 10px 40px;
+    border: 1px solid #ddd;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 12px;
+}
+
+.hideTillLoaded {
+    pointer-events: none;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(19, 19, 19);
+    opacity: 0.9;
+    position: fixed;
+    z-index: 999999999;
+}
+
+.bb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+.selectedl,
+.select {
+    transition: 0.2s ease-in-out;
+}
+
+.panels {
+    transition: 0.2 ease-in-out;
 }

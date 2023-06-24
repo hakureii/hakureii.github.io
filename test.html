@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body ondragstart="return false;">
+    <img id="spinImage" style="border-radius: 100%" width="48px"
+        src="https://cdn.discordapp.com/attachments/1104395344973930536/1121085206800105604/strato-logo.png" />
+
+    <!--<input onkeyup="search()" placeholder="Search..." type="text" id="myInput">-->
+    <!--Code may be corrupt on some browsers, remove brackets and minuses to allow code to run, i have no idea how to implent a search function but i can add invisible text to just scroll to that area.-->
+
+    <h2></h2>
+
+    <h3 id="current-time">Debugging page</h3>
+    <div class="card-container"></div>
+
+    <div class="support">
+        <div class="mainbuttoncontainer">
+            <button class="menu-items selected">Profile</button>
+            <div class="mseperator"></div>
+            <button class="menu-items">Settings</button>
+            <button class="menu-items">Friends</button>
+            <button class="menu-items">Credits</button>
+        </div>
+
+        <img class="pfp" width="15%" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);cursor:auto;"
+            src="https://preview.redd.it/2ezy3v4u2nc61.png?width=960&format=png&auto=webp&v=enabled&s=e3e790daa404bff5741d1ce9836d292da63848dc" />
+
+        <div class="bottom-bar">
+            <div class="bline"></div>
+            <img style="position:absolute; top:10%; left: 2.5%" width="40px"
+                src="Controller/Black/Pro Controller.png" />
+            <img style="position:absolute; top:30%; right: 5%" width="70px"
+                src="https://cdn.discordapp.com/attachments/1121502360032788612/1121821431085404292/image.png" />
+        </div>
+
+</body>
+
+<style>
+    .pfp {
+        position: fixed;
+        top: 10%;
+        left: 55vmin;
+        transition: 0.15s ease-out;
+    }
+
+    .pfp:hover {
+        border: 4.5px solid #43d7df80;
+        position: fixed;
+        top: 10%;
+        left: 55vmin;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .mseperator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        position: relative;
+        left: 13%;
+        top: 0px;
+        height: 0.8px;
+        background-color: #8b8b8b;
+    }
+
+    .mainbuttoncontainer {
+        display: flex;
+        flex-direction: column;
+        width: 35vmin;
+    }
+
+    .menu-items {
+        transition: 0.15s ease-out;
+        cursor: pointer;
+        padding-left: 19px;
+        font-size: 1rem;
+        text-align: left;
+        margin-left: 14px;
+        margin-bottom: 8px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .selected {
+        color: #0047ff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        border: 4.5px solid #43d6df;
+        background-color: #fff;
+    }
+
+    .lineSelected {
+        background-color: #0047ff;
+        width: 4px;
+        height: 40px;
+        position: fixed;
+        top: 17%;
+    }
+
+    .menu-items:hover {
+        border: 4.5px solid #43d7df80;
+    }
+</style>
+
+</html>
